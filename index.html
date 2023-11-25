@@ -1,0 +1,195 @@
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 10px;
+            background-color: rgb(126, 212, 232);
+            font-weight: bold;
+            font-size: auto;
+        }
+
+        #clock {
+            width: 170px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;
+            align-items: center;
+            background: linear-gradient(to right, #3494e6,#34e690, #ec6ead);
+            border-radius: 150px;
+            box-shadow: 0 8px 32px 0;
+            color: #090808;
+            text-align:center;
+            font-family: 'Arial', sans-serif;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        #date {
+            width: 170px;
+            margin-left: auto;
+            margin-top: 3px;
+            margin-right: auto;
+            padding: 9px;
+            align-items: center;
+            border-radius: 150px;
+            box-shadow: 0 8px 32px 0;
+            color: rgb(65, 8, 106);
+            text-align:center;
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            border-radius: 13px;
+            background-color: rgb(245, 247, 247);
+
+        }
+        button {
+            padding: 10px;
+            background-color: #0a781d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 28px;
+            transition: transform 0.5s ease;
+        }
+        button:active{
+           transform: scale(0.70);
+        }
+        #Rate {
+            margin-top: 18px;
+            color: rgb(38, 13, 178);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #Total {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            color:rgb(55, 0, 128);
+            font-size: 25px;
+            border:black;
+            background-color: rgb(241, 245, 249);
+            border-radius: 5px;
+            border-color:red;
+            width: 220px;
+            border-style: inset;
+            font-weight: bolder;
+
+        }
+        #num1{
+            font-size: 23px;
+            width: 100px;
+            font-weight: bolder;
+            color:red;
+
+        }
+        #num2{
+            font-size: 23px;
+            width: 100px;
+            font-weight: bolder;
+            color:blue;
+        }
+        #num3{
+            font-size: 23px;
+            width: 120px;
+            font-weight: bolder;
+            color:rgb(8, 11, 1);
+        }
+        h2{
+            align-content: center;
+
+
+        }
+        h3{
+            font-size: 15px;
+            color: #06270b;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    <div id="clock"></div>
+    <div id="date"></div>
+</h2>
+<h3>FAT=398.36 ; SNF=265.57 ; RATE=40.50 </h3>
+
+<label for="num1">Enter FAT Value: </label>
+<input type="number" id="num1" placeholder="FAT">
+<br>
+
+<label for="num2">Enter SNF Value: </label>
+<input type="number" id="num2" placeholder="SNF">
+<br>
+
+<label for="num3">Enter KG Value: </label>
+<input type="number" id="num3" placeholder="KG" >
+<br>
+
+<br>
+
+<button onclick="playSound();multiplyNumbers();">Calculate </button>
+<audio id="myAudio">
+    <!-- Provide the correct file name in the src attribute -->
+    <source src="button.wav" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<div id="Rate"></div>
+<div id="Total"></div>
+
+<script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            // Convert to 12-hour format
+            hours = hours % 12 || 12;
+
+            const clock = document.getElementById('clock');
+            clock.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+        function updateDate() {
+      const now = new Date();
+      const options = { weekday: 'long', month: 'long', day: 'numeric' };
+      const dateString = now.toLocaleDateString('en-US', options);
+      document.getElementById('date').innerText = dateString;
+    }
+
+    updateDate();
+
+        function multiplyNumbers() {
+            // Get the input values
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var num3 = document.getElementById("num3").value;
+
+            // Multiply the numbers
+            var Rate = (num1*3.9836) + (num2*2.6557);
+            var Total = Rate * num3;
+            var Round =Math.round(Total);
+            var Round2 =Rate.toFixed(2);
+
+            // Display the result
+            document.getElementById("Rate").innerHTML = "Rate: " + Round2;
+            document.getElementById("Total").innerHTML = "Total Rs: " + Round;
+        }
+        function playSound() {
+      var audio = document.getElementById("myAudio");
+      audio.play();
+      }
+    </script>
+</body>
+</html>
