@@ -10,21 +10,83 @@
             font-weight: bold;
             font-size: auto;
         }
+
         @keyframes colorChange {
             0% {
-                border-color: rgb(51, 192, 227); /* Start color (black) */
+                border-color: rgb(51, 192, 227);
+                /* Start color (black) */
             }
+
             25% {
-                border-color: #ff00b7; /* Middle color (red) */
+                border-color: #ff00b7;
+                /* Middle color (red) */
             }
+
             50% {
-                border-color: rgb(0, 255, 149); /* Middle color (red) */
+                border-color: rgb(0, 255, 149);
+                /* Middle color (red) */
             }
+
             75% {
-                border-color: rgb(200, 255, 0); /* Middle color (red) */
+                border-color: rgb(200, 255, 0);
+                /* Middle color (red) */
             }
+
             100% {
-                border-color: rgb(51, 192, 227); /* End color (black) */
+                border-color: rgb(51, 192, 227);
+                /* End color (black) */
+            }
+        }
+        @keyframes colorChange2 {
+            0% {
+                border-color: rgb(51, 227, 83);
+                /* Start color (black) */
+            }
+
+            25% {
+                border-color: #ff8800;
+                /* Middle color (red) */
+            }
+
+            50% {
+                border-color: rgb(191, 0, 255);
+                /* Middle color (red) */
+            }
+
+            75% {
+                border-color: rgb(0, 191, 255);
+                /* Middle color (red) */
+            }
+
+            100% {
+                border-color: rgb(51, 192, 227);
+                /* End color (black) */
+            }
+        }
+        @keyframes colorChange3 {
+            0% {
+                border-color: rgb(203, 51, 227);
+                /* Start color (black) */
+            }
+
+            25% {
+                border-color: #26ff00;
+                /* Middle color (red) */
+            }
+
+            50% {
+                border-color: rgb(30, 0, 255);
+                /* Middle color (red) */
+            }
+
+            75% {
+                border-color: rgb(255, 77, 0);
+                /* Middle color (red) */
+            }
+
+            100% {
+                border-color: rgb(227, 104, 51);
+                /* End color (black) */
             }
         }
 
@@ -39,7 +101,8 @@
             background-color: rgb(51, 192, 227);
             box-sizing: border-box;
             animation: colorChange 10s linear infinite;
-            border: 1.6px solid rgb(51, 192, 227); /* Initial color (black) */
+            border: 1.4px solid rgb(51, 192, 227);
+            /* Initial color (black) */
 
         }
 
@@ -58,10 +121,15 @@
             font-family: 'Arial', sans-serif;
             font-size: 25px;
             font-weight: bolder;
+            border: 1px solid aqua;
+            animation: colorChange2 10s linear infinite;
+
         }
 
         #date {
             width: 170px;
+            border: 1.2px solid aqua;
+            animation: colorChange3 10s linear infinite;
             margin-left: auto;
             margin-top: 3px;
             margin-right: auto;
@@ -136,6 +204,8 @@
             font-weight: bolder;
             color: red;
             box-shadow: 0 1px 2px 0;
+            border: 1px solid aqua;
+            animation: colorChange2 10s linear infinite;
 
         }
 
@@ -145,6 +215,8 @@
             font-weight: bolder;
             color: blue;
             box-shadow: 0 1px 2px 0;
+            border: 1px solid aqua;
+            animation: colorChange2 10s linear infinite;
         }
 
         #num3 {
@@ -153,6 +225,8 @@
             font-weight: bolder;
             color: rgb(8, 11, 1);
             box-shadow: 0 1px 2px 0;
+            border: 1px solid aqua;
+            animation: colorChange2 10s linear infinite;
 
         }
 
@@ -185,7 +259,6 @@
 
         <button onclick="playSound();multiplyNumbers();">Calculate </button>
         <audio id="myAudio">
-            <!-- Provide the correct file name in the src attribute -->
             <source src="button.wav" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
