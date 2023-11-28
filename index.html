@@ -9,6 +9,15 @@
             font-weight: bold;
             font-size: auto;
         }
+        #little{
+            width: 320px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            padding:20px;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px 0;
+        }
 
         #clock {
             width: 170px;
@@ -18,7 +27,7 @@
             padding: 15px;
             align-items: center;
             background: linear-gradient(to right, #3494e6,#34e690, #ec6ead);
-            border-radius: 150px;
+            border-radius: 5px;
             box-shadow: 0 8px 32px 0;
             color: #090808;
             text-align:center;
@@ -31,15 +40,19 @@
             margin-left: auto;
             margin-top: 3px;
             margin-right: auto;
-            padding: 9px;
+            padding: 15px;
             align-items: center;
-            border-radius: 150px;
-            box-shadow: 0 8px 32px 0;
-            color: rgb(65, 8, 106);
+            border-radius: 5px;
+            box-shadow: 0 8px 40px 0;
+            color: rgb(10, 24, 148);
             text-align:center;
             font-family: 'Arial', sans-serif;
             font-size: 20px;
             font-weight: bolder;
+        }
+        label{
+            font-size:22px;
+            font-style: italic;
         }
 
         input {
@@ -48,16 +61,19 @@
             border-radius: 13px;
             background-color: rgb(245, 247, 247);
 
+
         }
         button {
             padding: 10px;
-            background-color: #3deb34;
+            background-color: #14840f;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 28px;
             transition: transform 0.5s ease;
+            box-shadow: 0 10px 72px 0;
+
         }
         button:active{
            transform: scale(0.70);
@@ -88,6 +104,7 @@
             width: 100px;
             font-weight: bolder;
             color:red;
+            box-shadow: 0 1px 2px 0;
 
         }
         #num2{
@@ -95,51 +112,50 @@
             width: 100px;
             font-weight: bolder;
             color:blue;
+            box-shadow: 0 1px 2px 0;
         }
         #num3{
             font-size: 23px;
             width: 120px;
             font-weight: bolder;
             color:rgb(8, 11, 1);
+            box-shadow: 0 1px 2px 0;
+
         }
         h2{
             align-content: center;
-
-
-        }
-        h3{
             font-size: 15px;
-            color: #06270b;
+
         }
+     
     </style>
 </head>
 <body>
-<h2>
     <div id="clock"></div>
     <div id="date"></div>
-</h2>
-<h3>FAT=398.36 ; SNF=265.57 ; RATE=40.50 </h3>
+<h2>FAT=398.36 ; SNF=265.57 ; RATE=40.50 </h2>
 
-<label for="num1">Enter FAT Value: </label>
-<input type="number" id="num1" placeholder="FAT">
-<br>
+<div id="little">
+    <label for="num1">Enter FAT Value: </label>
+    <input type="number" id="num1" placeholder="FAT">
+    <br>
+    <label for="num2">Enter SNF Value: </label>
+    <input type="number" id="num2" placeholder="SNF">
+    <br>
 
-<label for="num2">Enter SNF Value: </label>
-<input type="number" id="num2" placeholder="SNF">
-<br>
+    <label for="num3">Enter KG Value: </label>
+    <input type="number" id="num3" placeholder="KG" >
+    <br>
 
-<label for="num3">Enter KG Value: </label>
-<input type="number" id="num3" placeholder="KG" >
-<br>
+    <br>
 
-<br>
-
-<button onclick="playSound();multiplyNumbers();">Calculate </button>
-<audio id="myAudio">
+    <button onclick="playSound();multiplyNumbers();">Calculate </button>
+    <audio id="myAudio">
     <!-- Provide the correct file name in the src attribute -->
     <source src="button.wav" type="audio/mp3">
     Your browser does not support the audio element.
-</audio>
+    </audio>
+</div>
 
 <div id="Rate"></div>
 <div id="Total"></div>
