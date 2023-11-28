@@ -1,22 +1,46 @@
 <html lang="en">
+
 <head>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 10px;
-            background-color: rgb(126, 212, 232);
+            background-color: rgb(125, 217, 237);
             font-weight: bold;
             font-size: auto;
         }
-        #little{
+        @keyframes colorChange {
+            0% {
+                border-color: rgb(51, 192, 227); /* Start color (black) */
+            }
+            25% {
+                border-color: #ff00b7; /* Middle color (red) */
+            }
+            50% {
+                border-color: rgb(0, 255, 149); /* Middle color (red) */
+            }
+            75% {
+                border-color: rgb(200, 255, 0); /* Middle color (red) */
+            }
+            100% {
+                border-color: rgb(51, 192, 227); /* End color (black) */
+            }
+        }
+
+        #little {
             width: 320px;
             margin-top: 30px;
             margin-left: auto;
             margin-right: auto;
-            padding:20px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 8px 32px 0;
+            background-color: rgb(51, 192, 227);
+            box-sizing: border-box;
+            animation: colorChange 10s linear infinite;
+            border: 5px solid rgb(51, 192, 227); /* Initial color (black) */
+
         }
 
         #clock {
@@ -26,15 +50,16 @@
             margin-right: auto;
             padding: 15px;
             align-items: center;
-            background: linear-gradient(to right, #3494e6,#34e690, #ec6ead);
+            background: linear-gradient(to right, #3494e6, #34e690, #ec6ead);
             border-radius: 5px;
             box-shadow: 0 8px 32px 0;
             color: #090808;
-            text-align:center;
+            text-align: center;
             font-family: 'Arial', sans-serif;
             font-size: 25px;
             font-weight: bolder;
         }
+
         #date {
             width: 170px;
             margin-left: auto;
@@ -45,13 +70,14 @@
             border-radius: 5px;
             box-shadow: 0 8px 40px 0;
             color: rgb(10, 24, 148);
-            text-align:center;
+            text-align: center;
             font-family: 'Arial', sans-serif;
             font-size: 20px;
             font-weight: bolder;
         }
-        label{
-            font-size:22px;
+
+        label {
+            font-size: 18px;
             font-style: italic;
         }
 
@@ -63,6 +89,7 @@
 
 
         }
+
         button {
             padding: 10px;
             background-color: #14840f;
@@ -72,95 +99,102 @@
             cursor: pointer;
             font-size: 28px;
             transition: transform 0.5s ease;
-            box-shadow: 0 10px 72px 0;
+            box-shadow: 0 2px 22px 0;
 
         }
-        button:active{
-           transform: scale(0.70);
+
+        button:active {
+            transform: scale(0.70);
         }
+
         #Rate {
             margin-top: 18px;
             color: rgb(38, 13, 178);
             font-size: 20px;
             font-weight: bold;
         }
+
         #Total {
             margin-top: 20px;
             margin-left: auto;
             margin-right: auto;
-            color:rgb(55, 0, 128);
+            color: rgb(55, 0, 128);
             font-size: 25px;
-            border:black;
+            border: black;
             background-color: rgb(241, 245, 249);
             border-radius: 5px;
-            border-color:red;
+            border-color: red;
             width: 220px;
             border-style: inset;
             font-weight: bolder;
 
         }
-        #num1{
+
+        #num1 {
             font-size: 23px;
             width: 100px;
             font-weight: bolder;
-            color:red;
+            color: red;
             box-shadow: 0 1px 2px 0;
 
         }
-        #num2{
+
+        #num2 {
             font-size: 23px;
             width: 100px;
             font-weight: bolder;
-            color:blue;
+            color: blue;
             box-shadow: 0 1px 2px 0;
         }
-        #num3{
+
+        #num3 {
             font-size: 23px;
             width: 120px;
             font-weight: bolder;
-            color:rgb(8, 11, 1);
+            color: rgb(8, 11, 1);
             box-shadow: 0 1px 2px 0;
 
         }
-        h2{
+
+        h2 {
             align-content: center;
             font-size: 15px;
 
         }
-     
     </style>
 </head>
+
 <body>
     <div id="clock"></div>
     <div id="date"></div>
-<h2>FAT=398.36 ; SNF=265.57 ; RATE=40.50 </h2>
+    <h2>FAT=398.36 ; SNF=265.57 ; RATE=40.50 </h2>
 
-<div id="little">
-    <label for="num1">Enter FAT Value: </label>
-    <input type="number" id="num1" placeholder="FAT">
-    <br>
-    <label for="num2">Enter SNF Value: </label>
-    <input type="number" id="num2" placeholder="SNF">
-    <br>
+    <div id="little">
+        <label for="num1">Enter FAT Value: </label>
+        <input type="number" id="num1" placeholder="FAT">
+        <br>
+        <label for="num2">Enter SNF Value: </label>
+        <input type="number" id="num2" placeholder="SNF">
+        <br>
 
-    <label for="num3">Enter KG Value: </label>
-    <input type="number" id="num3" placeholder="KG" >
-    <br>
+        <label for="num3">Enter KG Value: </label>
+        <input type="number" id="num3" placeholder="KG">
+        <br>
 
-    <br>
+        <br>
 
-    <button onclick="playSound();multiplyNumbers();">Calculate </button>
-    <audio id="myAudio">
-    <!-- Provide the correct file name in the src attribute -->
-    <source src="button.wav" type="audio/mp3">
-    Your browser does not support the audio element.
-    </audio>
-</div>
+        <button onclick="playSound();multiplyNumbers();">Calculate </button>
+        <audio id="myAudio">
+            <!-- Provide the correct file name in the src attribute -->
+            <source src="button.wav" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 
-<div id="Rate"></div>
-<div id="Total"></div>
+    <div id="Rate"></div>
+    <div id="Total"></div>
 
-<script>
+    <script>
         function updateClock() {
             const now = new Date();
             let hours = now.getHours();
@@ -178,13 +212,13 @@
         setInterval(updateClock, 1000);
         updateClock();
         function updateDate() {
-      const now = new Date();
-      const options = { weekday: 'long', month: 'long', day: 'numeric' };
-      const dateString = now.toLocaleDateString('en-US', options);
-      document.getElementById('date').innerText = dateString;
-    }
+            const now = new Date();
+            const options = { weekday: 'long', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('en-US', options);
+            document.getElementById('date').innerText = dateString;
+        }
 
-    updateDate();
+        updateDate();
 
         function multiplyNumbers() {
             // Get the input values
@@ -193,19 +227,20 @@
             var num3 = document.getElementById("num3").value;
 
             // Multiply the numbers
-            var Rate = (num1*3.9836) + (num2*2.6557);
+            var Rate = (num1 * 3.9836) + (num2 * 2.6557);
             var Total = Rate * num3;
-            var Round =Math.round(Total);
-            var Round2 =Rate.toFixed(2);
+            var Round = Math.round(Total);
+            var Round2 = Rate.toFixed(2);
 
             // Display the result
             document.getElementById("Rate").innerHTML = "Rate: " + Round2;
             document.getElementById("Total").innerHTML = "Total Rs: " + Round;
         }
         function playSound() {
-      var audio = document.getElementById("myAudio");
-      audio.play();
-      }
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
     </script>
 </body>
+
 </html>
