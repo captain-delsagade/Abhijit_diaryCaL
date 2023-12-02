@@ -146,7 +146,7 @@
         var interval = setInterval(function() {
             if (width >= 100) {
                 clearInterval(interval);
-                hideSplashScreen();
+                reloadAndroid();
             } else {
                 width++;
                 progressBarInner.style.width = width + '%';
@@ -155,11 +155,12 @@
         }, 50);
     }
 
-   function hideSplashScreen() {
+   function reloadAndroid() {
     var splashScreen = document.getElementById('splash-screen');
     splashScreen.style.display = 'none';
 
     // Reload the page after hiding the splash screen
     window.location.reload(true);
+            Android.reloadWebView();
 }
 
