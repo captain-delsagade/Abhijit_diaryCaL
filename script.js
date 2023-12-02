@@ -135,3 +135,30 @@
                 phoneNumberInput.value = "[Select a person]";
         }
     }
+    function showSplashScreen() {
+        var splashScreen = document.getElementById('splash-screen');
+        splashScreen.style.display = 'flex';
+
+        var progressBarInner = document.getElementById('progress-bar-inner');
+        var percentageText = document.getElementById('percentage-text');
+        
+        var width = 1;
+        var interval = setInterval(function() {
+            if (width >= 100) {
+                clearInterval(interval);
+                hideSplashScreen();
+            } else {
+                width++;
+                progressBarInner.style.width = width + '%';
+                percentageText.innerText = width + '%';
+            }
+        }, 50);
+    }
+
+    function hideSplashScreen() {
+        var splashScreen = document.getElementById('splash-screen');
+        splashScreen.style.display = 'none';
+
+        // Reload the page after hiding the splash screen
+        location.reload();
+    }
