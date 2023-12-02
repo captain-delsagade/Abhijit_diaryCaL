@@ -146,7 +146,7 @@
         var interval = setInterval(function() {
             if (width >= 100) {
                 clearInterval(interval);
-                reloadAndroid();
+                reloadWebView();
             } else {
                 width++;
                 progressBarInner.style.width = width + '%';
@@ -155,7 +155,7 @@
         }, 50);
     }
 
-   function reloadAndroid() {
+   function reloadWebView() {
     var splashScreen = document.getElementById('splash-screen');
     splashScreen.style.display = 'none';
 
