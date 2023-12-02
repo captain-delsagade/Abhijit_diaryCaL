@@ -1,265 +1,18 @@
 <html lang="en">
 <head>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                margin: 10px;
-                background-color: rgb(125, 217, 237);
-                font-weight: bold;
-                font-size: auto;
-            }
-
-            @keyframes colorChange {
-                0% {
-                    border-color: rgb(51, 192, 227);
-                    /* Start color (black) */
-                }
-
-                25% {
-                    border-color: #ff00b7;
-                    /* Middle color (red) */
-                }
-
-                50% {
-                    border-color: rgb(0, 255, 149);
-                    /* Middle color (red) */
-                }
-
-                75% {
-                    border-color: rgb(200, 255, 0);
-                    /* Middle color (red) */
-                }
-
-                100% {
-                    border-color: rgb(51, 192, 227);
-                    /* End color (black) */
-                }
-            }
-
-            @keyframes colorChange2 {
-                0% {
-                    border-color: rgb(51, 227, 83);
-                    /* Start color (black) */
-                }
-
-                25% {
-                    border-color: #ff8800;
-                    /* Middle color (red) */
-                }
-
-                50% {
-                    border-color: rgb(191, 0, 255);
-                    /* Middle color (red) */
-                }
-
-                75% {
-                    border-color: rgb(0, 191, 255);
-                    /* Middle color (red) */
-                }
-
-                100% {
-                    border-color: rgb(51, 192, 227);
-                    /* End color (black) */
-                }
-            }
-
-            @keyframes colorChange3 {
-                0% {
-                    border-color: rgb(203, 51, 227);
-                    /* Start color (black) */
-                }
-
-                25% {
-                    border-color: #26ff00;
-                    /* Middle color (red) */
-                }
-
-                50% {
-                    border-color: rgb(30, 0, 255);
-                    /* Middle color (red) */
-                }
-
-                75% {
-                    border-color: rgb(255, 77, 0);
-                    /* Middle color (red) */
-                }
-
-                100% {
-                    border-color: rgb(227, 104, 51);
-                    /* End color (black) */
-                }
-            }
-
-            #little {
-                width: 320px;
-                margin-top: 20px;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 8px 32px 0;
-                background-color: rgb(51, 192, 227);
-                box-sizing: border-box;
-                animation: colorChange 10s linear infinite;
-                border: 1.4px solid rgb(51, 192, 227);
-                /* Initial color (black) */
-
-            }
-
-            #clock2 {
-                width: 150px;
-                margin-top: 10px;
-                display:block;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 5px;
-                align-items: center;
-                background: linear-gradient(to right,rgb(51, 192, 227), #34e690, rgb(51, 192, 227));
-                border-radius: 10px;
-                box-shadow: 0 8px 32px 0;
-                color: #090808;
-                text-align: center;
-                font-family: 'Arial', sans-serif;
-                font-size: 18px;
-                font-weight: bolder;
-                border: 2px solid aqua;
-                animation: colorChange2 10s linear infinite;
-
-            }
-
-            #date{
-                font-size: 20px;
-            }
-            label {
-                font-size: 18px;
-            }
-
-            select {
-                font-size: 15px;
-                padding: 10px;
-                font-weight: bold;
-                border-radius: 10px;
-                width: 170px;
-                animation: colorChange 10s linear infinite;
-                background-color: #fefefe;
-                border: 2px solid aqua;
-            }
-
-            option {
-                font-size: 18px;
-                border: #000000;
-                background-color: #000000;
-                color: #000000;
-            }
-
-
-
-            input {
-                padding: 8px;
-                margin: 5px;
-                border-radius: 13px;
-                background-color: rgb(245, 247, 247);
-
-
-            }
-
-            #submit {
-                padding: 10px;
-                background-color: #14840f;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 28px;
-                transition: transform 0.5s ease;
-                box-shadow: 0 2px 22px 0;
-
-            }
-
-            #submit:active {
-                transform: scale(0.70);
-            }
-
-            #Rate {
-                margin-top: 18px;
-                color: rgb(38, 13, 178);
-                font-size: 20px;
-                font-weight: bold;
-            }
-
-            #Total {
-                margin-top: 20px;
-                margin-left: auto;
-                margin-right: auto;
-                color: rgb(55, 0, 128);
-                font-size: 25px;
-                border: black;
-                background-color: rgb(241, 245, 249);
-                border-radius: 5px;
-                border-color: red;
-                width: 220px;
-                border-style: inset;
-                font-weight: bolder;
-
-            }
-
-            #num1 {
-                font-size: 23px;
-                width: 100px;
-                font-weight: bolder;
-                color: red;
-                box-shadow: 0 1px 2px 0;
-                border: 1px solid aqua;
-                animation: colorChange2 10s linear infinite;
-
-            }
-
-            #num2 {
-                font-size: 23px;
-                width: 100px;
-                font-weight: bolder;
-                color: blue;
-                box-shadow: 0 1px 2px 0;
-                border: 1px solid aqua;
-                animation: colorChange2 10s linear infinite;
-            }
-
-            #num3 {
-                font-size: 23px;
-                width: 120px;
-                font-weight: bolder;
-                color: rgb(8, 11, 1);
-                box-shadow: 0 1px 2px 0;
-                border: 1px solid aqua;
-                animation: colorChange2 10s linear infinite;
-
-            }
-
-            h2 {
-                align-content: center;
-                font-size: 12px;
-
-            }
-         h3{
-                margin-top: 20px;
-            }
-            .success-message {
-                color: rgb(5, 7, 5);
-            }
-        </style>
+    <link rel="stylesheet" href="style.css">
     </head>
 
 <body>
     <form action="" name="lol" method="post">
         <div id="clock2">
-                <div id="clock"></div>
-                <div id="date"></div>
+            <div id="clock"></div>
+            <div id="date"></div>
        </div>
         <h2>FAT=398.36 ; SNF=265.57 ; <span style="font-size: larger; font-weight: bolder;color: #021391;">RATE=40.50</span> </h2>
         <h3>
-            <label for="items">Select a Name:</label>
-            <select id="items" name="NAME">
+            <label for="personSelect">Select a Person:</label>
+            <select id="personSelect" name="NAME" onchange="updatePhoneNumber();">
                 <option value="চন্দনা ঘোষ">চন্দনা ঘোষ</option>
                 <option value="রাজেন্দ্র প্রসাদ ঘোষ">রাজেন্দ্র প্রসাদ ঘোষ</option>
                 <option value="রিঙ্কু কোলে">রিঙ্কু কোলে</option>
@@ -269,11 +22,12 @@
                 <option value="সুলোচনা ঘোষ">সুলোচনা ঘোষ</option>
                 <option value="রাহেলা শেখ">রাহেলা শেখ</option>
                 <option value="সুজাতা ঘোষ">সুজাতা ঘোষ</option>
+                <option value="Abhijit">Abhijit Testing</option>
                 
             </select>
-
         </h3>
-
+    <span> <input type="text" id="phoneNumber" readonly value="[Select a person]">
+    </span>
         <div id="little">
             <label for="num1">Enter FAT Value: </label>
             <input type="number" id="num1" step="any" placeholder="FAT" name="FAT" oninput="rateandtotal();">
@@ -287,7 +41,7 @@
             <br>
             <input type="number" id="rate" hidden step="any" name="RATE">
             <input type="number" id="total" hidden name="TOTAL">
-            <input type="datetime" id="datetimeInput" name="DATE" hidden >
+            <input type="datetime" id="datetimeInput" name="DATE" readonly >
 
             <br>
             <input value=Calculate type="submit" id="submit" onclick="playSound();multiplyNumbers();">
@@ -304,103 +58,6 @@
         Submitted on Excel Sheet.
     </div>
 
-    <script>
-     // Function to set current date and time in the input box
-       function setCurrentDateTime() {
-            var currentDate = new Date();
-            var year = currentDate.getFullYear();
-            var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-            var day = currentDate.getDate().toString().padStart(2, '0');
-            var hours = currentDate.getHours();
-            var minutes = currentDate.getMinutes().toString().padStart(2, '0');
-            var ampm = hours >= 12 ? 'PM' : 'AM';
-            
-            // Convert hours to 12-hour format
-            hours = hours % 12;
-            hours = hours ? hours : 12; // Set 12 for midnight
-
-            var formattedDateTime = `${day}/${month}/${year}   ${hours.toString().padStart(2, '0')}:${minutes}_${ampm}`;
-
-            document.getElementById('datetimeInput').value = formattedDateTime;
-        }
-
-        // Call the function when the page loads
-        window.onload = setCurrentDateTime;
-
-        function rateandtotal() {
-            var num1 = document.getElementById("num1").value;
-            var num2 = document.getElementById("num2").value;
-            var num3 = document.getElementById("num3").value;
-
-            var Rate = (num1 * 3.9836) + (num2 * 2.6557);
-            var Total = Rate * num3;
-            var Round = Math.round(Total);
-            var Round2 = Rate.toFixed(2);
-
-
-            document.getElementById('rate').value = Round2;
-            document.getElementById('total').value = Round;
-
-
-        }
-
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-
-            // Convert to 12-hour format
-            hours = hours % 12 || 12;
-
-            const clock = document.getElementById('clock');
-            clock.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        function updateDate() {
-            const now = new Date();
-            const options = { weekday: 'long', month: 'long', day: 'numeric' };
-            const dateString = now.toLocaleDateString('en-US', options);
-            document.getElementById('date').innerText = dateString;
-        }
-
-        updateDate();
-
-        function multiplyNumbers() {
-            // Get the input values
-            var num1 = document.getElementById("num1").value;
-            var num2 = document.getElementById("num2").value;
-            var num3 = document.getElementById("num3").value;
-
-
-
-            // Multiply the numbers
-            var Rate = (num1 * 3.9836) + (num2 * 2.6557);
-            var Total = Rate * num3;
-            var Round = Math.round(Total);
-            var Round2 = Rate.toFixed(2);
-
-            // Display the result
-            document.getElementById("Rate").innerHTML = "Rate: " + Round2;
-            document.getElementById("Total").innerHTML = "Total Rs: " + Round;
-            document.getElementById("num4").innerHTML = "Rate: " + Round2;
-        }
-        function playSound() {
-            var audio = document.getElementById("myAudio");
-            audio.play();
-        }
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxRKCypXV-ui831AWG75DbFEZE9IuPfQ0GmMOykppJg7mQdrVP7Mx1UkUV_UK1EgWElJg/exec'
-        const form = document.forms['lol']
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            document.getElementById("successMessage").style.display = "block";
-        })
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
