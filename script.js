@@ -155,10 +155,11 @@
         }, 50);
     }
 
-    function hideSplashScreen() {
-        var splashScreen = document.getElementById('splash-screen');
-        splashScreen.style.display = 'none';
+   function hideSplashScreen() {
+    var splashScreen = document.getElementById('splash-screen');
+    splashScreen.style.display = 'none';
 
-        // Reload the page after hiding the splash screen
-        location.reload();
-    }
+    // Reload the page after hiding the splash screen
+    window.location.reload(true);
+}
+
