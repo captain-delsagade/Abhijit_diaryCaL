@@ -193,14 +193,14 @@ input {
 #reload-btn {
    float: right;
     border-radius: 3px;
-    padding: 3px;
+    padding: 10px;
     cursor: pointer;
     color: rgb(213, 237, 63);
-    margin-right: 5px;
+    margin-right: 4px;
     background-color: #0f1b84;
     animation: colorChange 150s linear infinite;
     box-shadow: 0 2px 12px 0;
-    border: 2px solid rgb(51, 192, 227);
+    border: 3px solid rgb(51, 192, 227);
     transition: transform 0.5s ease;
 }
 #reload-btn:active {
