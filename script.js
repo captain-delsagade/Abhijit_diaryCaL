@@ -128,6 +128,9 @@
             case "সুজাতা ঘোষ":
                 phoneNumberInput.value = "";
                     break;
+            case "সুজাতা ঘোষ":
+                phoneNumberInput.value = "";
+                    break;
             case "Abhijit":
                 phoneNumberInput.value = "9775815681";
                     break;
